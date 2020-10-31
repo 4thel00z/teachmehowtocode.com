@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #ffffff;/*#FED43F;*/
+        /* Primary theme text color */
+        --primary-text-color: #2b031d; /*680747; #543631;*/
+        /* Primary theme link color */
+        --primary-link-color: #680747;
+        /* Secondary color: the background body color */
+        --secondary-color: #ffffff;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #b51980;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;teachmehowtocode.com&#x2F;juice.css">
+    
+    
+</head>
+
+<body>
+    
+
+    <header class="pos-absolute" style="background-color: transparent">
+        
+
+<a href="https:&#x2F;&#x2F;teachmehowtocode.com&#x2F;">
+    <div class="logo">
+        <img src="https:&#x2F;&#x2F;teachmehowtocode.com&#x2F;logo_1.svg" alt="logo">
+        
+    </div>
+</a>
+
+<nav>
+    
+    
+</nav>
+
+    </header>
+
+    <div class="hero">
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <section class="text-center">
+            <h1 class="heading-text" style="font-size: 50px">
+                Learn how to code
+            </h1>
+            <h3 class="title-text">
+                <b>teachmehowtocode</b> is the first stop for the hacker's of tomorrow. Learn coding in a fun and easy way!
+            </h3>
+        </section>
+        <img class="hero-image" style="width: 50%" src="https:&#x2F;&#x2F;teachmehowtocode.com&#x2F;juice.svg">
+
+        <div class="explore-more text"
+            onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+            Explore More ⇩
+        </div>
+        <style>
+            .hero section {
+                padding: 0 5rem;
+            }
+            @media screen and (max-width: 768px) {
+                .hero section {
+                    padding: 0 2rem;
+                }
+
+                .hero-image {
+                    display: none
+                }
+            }
+        </style>
+        
+    </div>
+
+    
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://teachmehowtocode.com/#our-mission">Our mission</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://teachmehowtocode.com/#how-are-we-going-to-achieve-that">How are we going to achieve that?</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+            <div id="features" class="heading-text">Overview</div>
+            <h1 id="our-mission">Our mission</h1>
+<p>We at <a href="https://teachmehowtocode.com">teachmehowtocode</a> believe that it is everyones right to learn coding in modern and relevant programming languages, like <a href="https://teachmehowtocode.com/golang.org">go</a>, <a href="https://www.rust-lang.org">rust</a>, <a href="https://www.python.org/">python</a>, <a href="https://developer.mozilla.org/de/docs/Web/JavaScript">javascript</a>, and their other friends.</p>
+<h1 id="how-are-we-going-to-achieve-that">How are we going to achieve that?</h1>
+<p>We strongly believe in the DIY mantra. Coding cannot be taught on whiteboards nor should it be.
+To learn coding you must code plain and simple.</p>
+<p>In the upcoming weeks we will introduce you to a brilliant hands-on workflow that will enable you to work on project-based problems and get immediate feedback.</p>
+<p>Stay tuned!</p>
+
+            
+        </div>
+
+    </main>
+
+    
+    <footer>
+        <small class="subtext">
+            <a href="https://teachmehowtocode.com">teachmehowtocode.com</a> © 2020
+        </small>
+    </footer>
+    
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>
